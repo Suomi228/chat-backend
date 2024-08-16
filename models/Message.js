@@ -1,8 +1,16 @@
 import mongoose from 'mongoose'
 const messageSchema = mongoose.Schema({
- message: String,
- name: String,
- timestamp: String,
- received: Boolean
+ message: {
+    type:String,
+    required: true,},
+ name: {
+    type:String,
+    required: true,},
+ timestamp: {
+    type: String,
+    default: () => new Date().toISOString()},
+ received: {
+    type:Boolean,
+    required: true},
 })
 export default mongoose.model("Message", messageSchema);
