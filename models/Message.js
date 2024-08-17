@@ -1,16 +1,8 @@
 import mongoose from 'mongoose'
-const messageSchema = mongoose.Schema({
- message: {
-    type:String,
-    required: true,},
- name: {
-    type:String,
-    required: true,},
- timestamp: {
-    type: String,
-    default: () => new Date().toISOString()},
- received: {
-    type:Boolean,
-    required: true},
+const messagingSchema = mongoose.Schema({
+ message: String,
+ name: String,
+ timestamp: String,
+ received: Boolean
 })
-export default mongoose.model("Message", messageSchema);
+export default mongoose.model('messagingmessages', messagingSchema)
